@@ -1,0 +1,175 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://assets/1920x1080Grid.png" type="Texture" id=1]
+[ext_resource path="res://assets/BTN White/left.png" type="Texture" id=2]
+[ext_resource path="res://assets/BTN White/DPAD_all.png" type="Texture" id=3]
+[ext_resource path="res://assets/BTN White/buttonX.png" type="Texture" id=4]
+[ext_resource path="res://assets/BTN Black/buttonA.png" type="Texture" id=5]
+[ext_resource path="res://assets/BTN White/buttonA.png" type="Texture" id=6]
+[ext_resource path="res://assets/BTN Black/buttonX.png" type="Texture" id=7]
+[ext_resource path="res://assets/BTN White/buttonB.png" type="Texture" id=8]
+[ext_resource path="res://assets/BTN Black/buttonY.png" type="Texture" id=9]
+[ext_resource path="res://assets/BTN Black/buttonB.png" type="Texture" id=10]
+[ext_resource path="res://assets/BTN White/buttonY.png" type="Texture" id=11]
+[ext_resource path="res://assets/BTN Black/gear.png" type="Texture" id=12]
+[ext_resource path="res://assets/BTN White/gear.png" type="Texture" id=13]
+[ext_resource path="res://GamepadTheme.tres" type="Theme" id=14]
+[ext_resource path="res://GamepadFont.tres" type="DynamicFont" id=15]
+[ext_resource path="res://Gamepad.gd" type="Script" id=16]
+
+[node name="Gamepad" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 14 )
+script = ExtResource( 16 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 1920.0
+margin_bottom = 1080.0
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.121569, 0.105882, 0.141176, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Dpad" type="Sprite" parent="."]
+position = Vector2( 302.442, 416.958 )
+texture = ExtResource( 3 )
+
+[node name="Left" type="TouchScreenButton" parent="." groups=[
+"d-pad",
+]]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 99.8349, 328.868 )
+scale = Vector2( 1.02936, 1.79281 )
+normal = ExtResource( 2 )
+
+[node name="Up" type="TouchScreenButton" parent="." groups=[
+"d-pad",
+]]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 217.288, 223.161 )
+scale = Vector2( 1.70472, 1.05873 )
+normal = ExtResource( 2 )
+
+[node name="Right" type="TouchScreenButton" parent="." groups=[
+"d-pad",
+]]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 399.34, 346.487 )
+scale = Vector2( 1.08809, 1.61663 )
+normal = ExtResource( 2 )
+
+[node name="Down" type="TouchScreenButton" parent="." groups=[
+"d-pad",
+]]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 214.352, 540.284 )
+scale = Vector2( 1.70472, 0.911913 )
+normal = ExtResource( 2 )
+
+[node name="A" type="TouchScreenButton" parent="." groups=[
+"buttons",
+]]
+position = Vector2( 1362.45, 352.359 )
+scale = Vector2( 1.52854, 1.323 )
+normal = ExtResource( 6 )
+pressed = ExtResource( 5 )
+
+[node name="B" type="TouchScreenButton" parent="." groups=[
+"buttons",
+]]
+position = Vector2( 1509.27, 199.67 )
+scale = Vector2( 1.52854, 1.323 )
+normal = ExtResource( 8 )
+pressed = ExtResource( 10 )
+
+[node name="Y" type="TouchScreenButton" parent="." groups=[
+"buttons",
+]]
+position = Vector2( 1661.96, 358.232 )
+scale = Vector2( 1.52854, 1.323 )
+normal = ExtResource( 11 )
+pressed = ExtResource( 9 )
+
+[node name="X" type="TouchScreenButton" parent="." groups=[
+"buttons",
+]]
+position = Vector2( 1503.4, 510.921 )
+scale = Vector2( 1.52854, 1.323 )
+normal = ExtResource( 4 )
+pressed = ExtResource( 7 )
+
+[node name="Start" type="Button" parent="." groups=[
+"buttons",
+]]
+margin_left = 458.127
+margin_top = 810.191
+margin_right = 778.127
+margin_bottom = 903.191
+text = "Start"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Select" type="Button" parent="." groups=[
+"buttons",
+]]
+margin_left = 1100.62
+margin_top = 817.672
+margin_right = 1420.62
+margin_bottom = 910.672
+text = "Select"
+
+[node name="Switch1" type="CheckButton" parent="." groups=[
+"switch",
+]]
+margin_left = 159.611
+margin_top = 895.791
+margin_right = 415.611
+margin_bottom = 1023.79
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Switch2" type="CheckButton" parent="." groups=[
+"switch",
+]]
+margin_left = 1502.08
+margin_top = 895.126
+margin_right = 1758.08
+margin_bottom = 1023.13
+
+[node name="Settings" type="TouchScreenButton" parent="."]
+position = Vector2( 1758.86, 44.0449 )
+normal = ExtResource( 13 )
+pressed = ExtResource( 12 )
+
+[node name="Panel" type="Panel" parent="."]
+margin_left = 578.0
+margin_top = 127.0
+margin_right = 1302.0
+margin_bottom = 578.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel"]
+margin_left = 26.0
+margin_top = 24.0
+margin_right = 705.0
+margin_bottom = 424.0
+custom_fonts/normal_font = ExtResource( 15 )
+text = "This is our info box."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Settings" to="." method="_on_Settings_pressed"]
